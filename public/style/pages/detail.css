@@ -1,0 +1,28 @@
+.blog-img{
+    background-color: #fff;
+    height: fit-content;
+    box-sizing: border-box;
+    width: 53%;
+    padding: 30px;
+}
+
+.blog-img img{
+    width: 100%;
+}
+
+.blog-detail{
+    padding: 39px 65px 100px 65px;
+    background-color: #fff;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.review-title-and-more h3{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 40px;
+    text-decoration: none;
+}

@@ -1,0 +1,110 @@
+.profile-comment-review{
+    margin-bottom: 50px;
+}
+
+.complex-widgets{
+    margin-bottom: 25px;
+}
+
+.complex-widgets h3{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.complex-widgets p{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.comments h3{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.commentator{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 32px;
+}
+
+.commentator img{
+    border-radius: 100%;
+}
+
+.commentator h3{
+    margin-bottom: 0;
+}
+
+.comment-item{
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.comments-list .comment-item:not(:last-child){
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.comment-item p{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.add-comment-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.add-comment-form textarea{
+    font-family: 'Roboto 500', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+    padding: 10px 23px 20px 23px;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px 0px 0px 4px;
+    margin-bottom: 20px;
+}
+
+.add-comment-form button{
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    line-height: 46px;
+    border-radius: 4px;
+    background-color: #00A2DC;
+    width: fit-content;
+}
+
+.additional-login{
+    font-family: 'Roboto 500', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+    padding: 14px 27px;
+    background-color: #FFF3CD;
+    border-radius: 4px;
+    color: #856404;
+}
+
+.additional-login p>a{
+    text-decoration: none;
+    color: #00a2dc;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")  %>
+    <div class="container">
+        <div class="form-content">
+            <h1>Редактировать блог</h1>
+            <form action="/api/edit-blog" method="POST" class="form" enctype="multipart/form-data">
+                <input type="hidden" value="<%=blogs._id%>" name="id">
+                <input type="hidden" value="<%=blogs.author%>" name="author_id">
+                <input type="text" value="<%=blogs.title%>" name="title" placeholder="Введите заголовок блога">
+                <select name="category" id="category">
+                        <%
+                            categories.forEach(category=>{
+                                if(category.id == blogs.category){
+                        %>
+                            <option value="<%=category._id%>" selected><%=category.name%></option>
+                        <%
+                            }else{
+                        %>
+                            <option value="<%=category._id%>"><%=category.name%></option>      
+                        <%  
+                            }
+                          })
+                        %>
+                </select>
+                <div class="file-input">
+                    <input type="file" name="image">
+                    <a href="">Выберите картинку</a>
+                </div>
+                <input type="text" value="<%=blogs.description%>" name="description" placeholder="Введите описание блога">
+                <button type="submit">
+                    Создать
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

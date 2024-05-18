@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")  %>
+    <div class="container">
+        <div class="main">
+            <div class="main-review profile-comment-review">
+                <img src="<%=blog.image%>" alt="">
+                <div class="review-title-and-more">
+                    <h3><%=blog.title%></h3>
+                    <div class="main-review-more">
+                        <button class="btn-more" onclick="openMoreDetails()">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        Еще
+                        <div class="edit-or-delete">
+                            <a href="/edit/<%=blog._id%>">Редактировать</a>
+                            <a href="">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+                <p><%=blog.description%></p>
+                <div class="main-review-comments">
+                    <div class="review-date">
+                        <img src="/images/icons/date.svg" alt="">
+                        26.06.2020
+                    </div>
+                    <div class="review-seen">
+                        <img src="/images/icons/visibility.svg" alt="">
+                        21
+                    </div>
+                    <div class="review-comment">
+                        <img src="/images/icons/message.svg" alt="">
+                        4
+                    </div>
+                    <div class="review-discussion">
+                        <img src="/images/icons/forums.svg" alt="">
+                        <%=blog.category.name%>
+                    </div>
+                    <div class="review-profile">
+                        <img src="/images/icons/person.svg" alt="">
+                        <%=blog.author.full_name%>
+                    </div>
+                </div>
+            </div>
+            <div class="complex-widgets">
+                <h3>Что такое комплексные виджеты Webix?</h3>
+                <p>В отличие от обычных виджетов пользовательского интерфейса JavaScript, комплексные виджеты - это полноценные приложения, которые не требуют дополнительной настройки и кастомизации.<br><br>
+
+                    Они уже готовы к интеграции в Ваше бизнес-приложение, что позволяет экономить рабочее время программистам. Это визуальное воплощение концепции low-code платформы, которой является Webix. Комплексные виджеты Webix сразу же готовы к работе, потому что они содержат функциональный фронт-энд слой и, при необходимости, снабжены различными опциями для бэк-энда. <br><br>
+                    
+                    Гибкая архитектура Webix позволяет легко настраивать эти приложения, расширять их функциональность и интегрировать в существующие решения.<br><br>
+                </p>
+            </div>
+            <div class="comments">
+                <h3><%=rateCount%> комментариея</h3>
+                <div class="comments-list">
+                    <%
+                        if(rates){
+                            rates.forEach(rate=>{
+                    %>
+                        <div class="comment-item">
+                            <div class="commentator">
+                                <img src="/images/portrait.png" alt="">
+                                <h3><%=rate.authorId.full_name%></h3>
+                            </div>
+                            <p><%=rate.text%></p>
+                        </div>
+                    <%        
+                            })
+                        }
+                    %>
+                </div>
+                <form class="add-comment-form" onsubmit="sendRate(event)">
+                    <textarea id="comment-text" placeholder="Напишите комментарий"></textarea>
+                    <input type="hidden" value="<%=user._id%>" id="comment_author">
+                    <input type="hidden" value="<%=blog._id%>" id="comment_blog">
+                    <button type='submit'>Отправить</button>
+                </form>
+            </div>
+        </div>
+        <div class="categories">
+            <h1>Категории</h1>
+            <ul>
+                <li><a href="">Прогнозы в IT</a></li>
+                <li><a href="">Веб-разработка</a></li>
+                <li><a href="">Мобильная разработка</a></li>
+                <li><a href="">Фриланс</a></li>
+                <li><a href="">Алгоритмы</a></li>
+                <li><a href="">Тестирование IT систем</a></li>
+                <li><a href="">Разработка игр</a></li>
+                <li><a href="">Дизайн и юзабилити</a></li>
+                <li><a href="">Искуственный интелект</a></li>
+                <li><a href="">Машинное обучение</a></li>
+            </ul>
+        </div>
+    </div>
+    <%-include('partials/scripts.ejs')%>
+</body>
+</html>

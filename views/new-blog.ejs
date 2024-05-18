@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")  %>
+    <div class="container">
+        <div class="form-content">
+            <h1>Новый блог</h1>
+            <form action="/api/new-blog" method="POST" class="form" enctype="multipart/form-data">
+                <input type="text" name="title" placeholder="Введите заголовок блога">
+                <select name="category" id="category">
+                    <%
+                        categories.forEach(category=>{
+                    %>
+                        <option value="<%=category._id%>"><%=category.name%></option>      
+                    <%  
+                        })
+                    %>
+                </select>
+                <div class="file-input">
+                    <input type="file" name="image">
+                    <a href="">Выберите картинку</a>
+                </div>
+                <input type="text" name="description" placeholder="Введите описание блога">
+                <button type="submit">
+                    Создать
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

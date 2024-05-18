@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")  %>
+    <div class="container">
+        <div class="main">
+            <div class="my-blogs-title">
+                <h1>Мои блоги</h1>
+                <a href="/new-blog">Новый блог</a>
+            </div>
+            <%
+                blogs.forEach(item=>{
+                    if(item.author.id == loginUser.id){
+            %>
+                <div class="main-review">
+                    <img src="<%=item.image%>" alt="">
+                    <div class="review-title-and-more">
+                        <h3><%=item.title%></h3>
+                        <div class="main-review-more">
+                            <button class="btn-more" onclick="openMoreDetails(this)">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                            Еще
+                            <div class="edit-or-delete">
+                                <a href="/edit/<%=item._id%>">Редактировать</a>
+                                <a onclick="deleteBlogs('<%=item._id%>', '<%=item.author._id%>')">Удалить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p><%=item.description%></p>
+                    <div class="main-review-comments">
+                        <div class="review-date">
+                            <img src="/images/icons/date.svg" alt="">
+                            26.06.2020
+                        </div>
+                        <div class="review-seen">
+                            <img src="/images/icons/visibility.svg" alt="">
+                            21
+                        </div>
+                        <div class="review-comment">
+                            <img src="/images/icons/message.svg" alt="">
+                            4
+                        </div>
+                        <div class="review-discussion">
+                            <img src="/images/icons/forums.svg" alt="">
+                            <%=item.category.name%>
+                        </div>
+                        <div class="review-profile">
+                            <img src="/images/icons/person.svg" alt="">
+                            <%=item.author.full_name%>
+                        </div>
+                    </div>
+                </div>
+            <%
+                    }
+                })
+            %>
+        </div>
+        <div class="categories my-blogs-categories">
+            <img src="/images/portrait.png" alt="">
+            <h4><%=user.full_name%></h4>
+            <p>
+                В основном пишу про веб - разработку, на React & Redux<br><br>
+                285 постов за все время
+            </p>
+            <div class="btns-profile">
+                <a href="" class="edit-btn">Редактировать</a>
+                <a href="/api/signout" class="logout-btn">Выход</a>
+            </div>
+        </div>
+    </div>
+    <%-include('partials/scripts.ejs')%>
+    <script>
+        function openMoreDetails(button) {
+            // Находим ближайший родительский элемент .main-review
+            const mainReview = button.closest('.main-review');
+            // Находим в этом элементе .edit-or-delete
+            const editOrDelete = mainReview.querySelector('.edit-or-delete');
+            // Добавляем или удаляем класс 'active' в зависимости от его текущего состояния
+            editOrDelete.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

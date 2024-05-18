@@ -1,0 +1,145 @@
+.container{
+    background-color: #F8F9FA;
+    min-height: 100vh;
+    padding: 170px 5% 45px 5%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 25px; */
+}
+
+.main{
+    padding: 39px 65px 100px 65px;
+    background-color: #fff;
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.main-title{
+    text-align: center;
+    margin-bottom: 67px;
+}
+
+.main-title h1{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46px;
+    margin-bottom: 26px;
+}
+
+@font-face {
+    font-family: 'Roboto 400';
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
+.main-title p{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+
+.main-review{
+    margin-bottom: 95px;
+}
+
+.main-review img{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.review-title-and-more>a{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: #000;
+}
+
+.main-review p{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 27px;
+}
+
+.main-review-comments{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto 400',sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.main-review-comments div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.main-review-comments img{
+    margin: 0;
+    width: 24px;
+    height: 28px;
+}
+
+.main-news>img{
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.main-news h3{
+    font-family: 'Roboto 400',sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.main-news p{
+    font-family: 'Roboto 400',sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.categories{
+    padding: 43px 27px 30px 27px;
+    background-color: #fff;
+    height: fit-content;
+    box-sizing: border-box;
+    width: 28%;
+}
+
+.categories h1{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.categories li a{
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.categories li{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+    border-bottom: 1px solid #E7E7E7;
+}

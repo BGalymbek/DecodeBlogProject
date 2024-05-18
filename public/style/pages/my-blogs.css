@@ -1,0 +1,130 @@
+.my-blogs-title{
+    display: flex;
+    margin-bottom: 41px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-blogs-title h1{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+}
+
+.my-blogs-title a{
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    line-height: 46px;
+    border-radius: 4px;
+    background-color: #00A2DC;
+}
+
+.btns-profile a{
+    text-decoration: none;
+    padding:15px 20px;
+    color: #fff;
+    line-height: 46px;
+    border-radius: 4px;
+    background-color: #00A2DC;   
+}
+
+.btns-profile a:last-child{
+    background-color: red;
+}
+
+.head-img img{
+    width: 55px;
+    height: 56px;
+    border-radius: 100%;
+}
+
+.my-blogs-categories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.my-blogs-categories img{
+    height: 208px;
+    width: 198px;
+    border-radius: 100%;
+    margin-bottom: 11px;
+}
+
+.my-blogs-categories h4{
+    font-family: 'Roboto 500',sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 46px;
+}
+
+.my-blogs-categories p{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 43px;
+}
+
+.review-title-and-more{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;    
+    position: relative;
+    width: 100%;
+}
+
+.review-title-and-more h3{
+    width: 90%;
+    margin: 0;
+}
+
+.review-title-and-more i{
+    color: #0000008A;
+}
+
+.btn-more{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.edit-or-delete{
+    display: none;
+}
+
+.edit-or-delete a{
+    text-decoration: none;
+    font-family: 'Roboto 500', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+    color: #000;
+}
+
+.edit-or-delete a:last-child{
+    color: #FF0000;
+}
+
+.active{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    padding: 2px 53px 0px 14px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+
+.btn-more i{
+    font-size: 16px;
+}

@@ -1,0 +1,105 @@
+.form-content{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 43px 470px 30px 70px;
+}
+
+.form-content h1{
+    font-size: 36px;
+    line-height: 46px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+#category{
+    margin-bottom: 24px;
+    color: #0000008A;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    font-family: 'Roboto 500', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+    padding-left: 24px;
+    box-sizing: border-box;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    outline: none;
+}
+
+#category option{
+    color: #000;
+}
+
+.form input{
+    margin-bottom: 24px;
+    color: #0000008A;
+}
+
+.form input:not(.file-input>input){
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    font-family: 'Roboto 500', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: left;
+    padding-left: 24px;
+    outline: none;
+    color: #000;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form button>a{
+    text-decoration: none;
+    color: #fff;
+    line-height: 46px;
+    font-family: 'Roboto 500', sans-serif;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+}
+
+.form button{
+    border: none;
+    border-radius: 4px;
+    background-color: #00A2DC;
+    width: fit-content;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.file-input{
+    width: 178px;
+    height: 50px;
+    position: relative;
+    background-color: #FFF72F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    border-radius: 4px;
+}
+
+.file-input a{
+    text-decoration: none;
+    color: #000;
+}
+
+.file-input input[type="file"]{
+    position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
