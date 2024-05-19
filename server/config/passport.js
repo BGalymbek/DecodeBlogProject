@@ -2,7 +2,7 @@ const passport = require('passport')
 const User = require('../auth/User')
 const bcrypt = require('bcrypt')
 const LocalStategy = require('passport-local')
-// const GithubStrategy =require('passport-github2').Strategy
+const GithubStrategy =require('passport-github2').Strategy
 
 
 passport.use(new LocalStategy(
@@ -25,23 +25,23 @@ passport.use(new LocalStategy(
     }
 ))
 
-// passport.use(new GithubStrategy({
-//     clientID: ClientId,
-//     clientSecret: ClientSecret,
-//     callbackURL: "http://localhost:8001/api/auth/github",
-//     scope: ['user', 'email']
-//   },
-//   async function(accessToken, refreshToken, profile, cb) {
-//     const user = await User.find({githubid: profile.id})
-//     console.log(user);
-//     const newUser = await new User({
-//         githubid: profile.id,
-//         full_name: profile.displayName,
-//         email: profile.emails[0].value
-//     }).save()
-//     return cb(null, newUser)
-//   }
-// ));
+passport.use(new GithubStrategy({
+    clientID: CLINET_ID,
+    clientSecret: CLIENT_SECRET,
+    callbackURL: "http://localhost:8001/api/auth/github",
+    scope: ['user', 'email']
+  },
+  async function(accessToken, refreshToken, profile, cb) {
+    const user = await User.find({githubid: profile.id})
+    console.log(user);
+    const newUser = await new User({
+        githubid: profile.id,
+        full_name: profile.displayName,
+        email: profile.emails[0].value
+    }).save()
+    return cb(null, newUser)
+  }
+));
 
 passport.serializeUser(function(user, done){
     console.log(user);

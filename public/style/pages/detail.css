@@ -26,3 +26,11 @@
     margin-bottom: 40px;
     text-decoration: none;
 }
+
+.additional-login{
+    margin-top: 20px;
+}
+
+.comments-list .comment-item:last-child{
+    padding-bottom: 0;
+}

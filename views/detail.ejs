@@ -75,12 +75,24 @@
                         }
                     %>
                 </div>
-                <form class="add-comment-form" onsubmit="sendRate(event)">
-                    <textarea id="comment-text" placeholder="Напишите комментарий"></textarea>
-                    <input type="hidden" value="<%=user._id%>" id="comment_author">
-                    <input type="hidden" value="<%=blog._id%>" id="comment_blog">
-                    <button type='submit'>Отправить</button>
-                </form>
+                <%
+                    if(user && user._id){
+                %>
+                    <form class="add-comment-form" onsubmit="sendRate(event)">
+                        <textarea id="comment-text" placeholder="Напишите комментарий"></textarea>
+                        <input type="hidden" value="<%=user._id%>" id="comment_author">
+                        <input type="hidden" value="<%=blog._id%>" id="comment_blog">
+                        <button type='submit'>Отправить</button>
+                    </form>
+                <%       
+                    }else{
+                %>
+                    <div class="additional-login">
+                        <p>Чтобы оставить комментарий <a href="/register">зарегистрируйтесь</a>, или <a href="/login">войдите</a> в аккаунт.</p>
+                    </div>
+                <%
+                    }
+                %>
             </div>
         </div>
         <div class="categories">

@@ -45,10 +45,6 @@ router.get('/admin/:id' , async(req, res)=>{
     res.render('admin', {user: user ,loginUser:req.user, blogs: blogs})
 })
 
-router.get('/profile-comment' , (req, res)=>{
-    res.render('profile-comment', {user:req.user ? req.user : {}})
-})
-
 router.get('/logged-out-comment' , (req, res)=>{
     res.render('logged-out-comment',{user:req.user ? req.user : {}})
 })

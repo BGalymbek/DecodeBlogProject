@@ -1,17 +1,20 @@
+const Blog = require('../Blog/Blog')
+
 const isAuth = (req, res , next) =>{
-    if(req.user && !req.user.isAdmin){
+    if(req.user){
         next()
     }else{
-        res.status(401).send('Unauthorized login with simple account')
+        res.status(401).send('Unauthorized')
     }
 }
 
-const isAuthEdit = (req, res , next) =>{
-    if(req.user && !req.user.isAdmin){
+const isAuthAdminOrAuthor = async (req, res, next)=>{
+    const blogAuthor = await Blog.findById(req.params.id)
+    if(req.user.id == blogAuthor.author || req.user.isAdmin){
         next()
     }else{
-        res.status(401).send('You can not edit this Blog. Only author!')
+        res.status(401).send('You can not edit and delete this Blog. Only admin and author!')
     }
 }
 
-module.exports = {isAuth, isAuthEdit}
+module.exports = {isAuth , isAuthAdminOrAuthor}
