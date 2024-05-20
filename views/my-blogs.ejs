@@ -14,12 +14,24 @@
             </div>
             <%
                 blogs.forEach(item=>{
+                    console.log(blogs)
+                    let count = 0                
                     if(item.author.id == loginUser.id){
+                        rates.forEach(rate=>{    
+                            if(rate.blogId.toString() == item._id.toString()){
+                                count++;  
+                                
+                            }
+                        })  
             %>
                 <div class="main-review">
-                    <img src="<%=item.image%>" alt="">
+                    <a href="/detail/<%=item._id%>">
+                        <img src="<%=item.image%>" alt="">
+                    </a>
                     <div class="review-title-and-more">
-                        <h3><%=item.title%></h3>
+                        <div class="title-link">
+                            <a href="/detail/<%=item._id%>"><%=item.title%></a>
+                        </div>
                         <div class="main-review-more">
                             <button class="btn-more" onclick="openMoreDetails(this)">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -41,10 +53,10 @@
                             <img src="/images/icons/visibility.svg" alt="">
                             21
                         </div>
-                        <div class="review-comment">
+                        <a href="/detail/<%=item._id%>" class="review-comment">
                             <img src="/images/icons/message.svg" alt="">
-                            4
-                        </div>
+                            <%=count%>
+                        </a>
                         <div class="review-discussion">
                             <img src="/images/icons/forums.svg" alt="">
                             <%=item.category.name%>

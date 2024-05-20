@@ -26,17 +26,18 @@ router.get('/' , async (req, res)=>{
         res.locals.search = req.query.search
     }
     const totalBlogs = await Blog.countDocuments(options)
-    console.log(totalBlogs);
     const allCategories = await Category.find()
     const blogs = await Blog.find(options).limit(limit).skip(page * limit).populate('category').populate('author')
+    const rates = await Rate.find().populate('authorId')
     const user = req.user ? await User.findById(req.user._id) : {}
-    res.render('index', {user: user, blogs: blogs, categories: allCategories, pages: Math.ceil(totalBlogs / limit)})
+    res.render('index', {user: user, blogs: blogs, categories: allCategories, pages: Math.ceil(totalBlogs / limit), rates: rates})
 })
 
 router.get('/my-blogs/:id' , async(req, res)=>{
     const user = await User.findById(req.params.id)
     const blogs = await Blog.find().populate('category').populate('author')
-    res.render('my-blogs', {user: user ,loginUser:req.user, blogs: blogs})
+    const rates = await Rate.find().populate('authorId')
+    res.render('my-blogs', {user: user ,loginUser:req.user, blogs: blogs, rates: rates})
 })
 
 router.get('/admin/:id' , async(req, res)=>{
@@ -72,6 +73,8 @@ router.get('/detail/:id' , async(req, res)=>{
     const rates = await Rate.find({blogId: req.params.id}).populate('authorId')
     const rateCount = await Rate.find({blogId: req.params.id}).countDocuments();
     const blog = await Blog.findById(req.params.id).populate('category').populate('author')
+    console.log("rates: " + rates);
+    console.log("Blog: " + blog);
     res.render('detail',{user:req.user ? req.user : {}, blog: blog, rates: rates, rateCount: rateCount})
 })
 

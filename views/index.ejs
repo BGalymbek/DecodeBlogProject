@@ -15,6 +15,13 @@
             </div>
             <%
                 blogs.forEach(item=>{
+                    let count = 0                
+                    rates.forEach(rate=>{    
+                        if(rate.blogId.toString() == item._id.toString()){
+                            count++;  
+                            
+                        }
+                    })  
             %>
                 <div class="main-review">
                     <a href="/detail/<%=item._id%>">
@@ -35,8 +42,8 @@
                         </div>
                         <div class="review-comment">
                             <img src="/images/icons/message.svg" alt="">
-                            4
-                        </div>
+                            <%=count%>
+                        </div>  
                         <div class="review-discussion">
                             <img src="/images/icons/forums.svg" alt="">
                             <%=item.category.name%>

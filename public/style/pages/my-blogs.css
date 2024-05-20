@@ -134,3 +134,26 @@
 .btn-more i{
     font-size: 16px;
 }
+
+.title-link{
+    width: 90%;
+}
+
+.title-link a{
+    font-family: 'Roboto 400', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: #000;
+}
+
+.review-comment{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #000;
+}
