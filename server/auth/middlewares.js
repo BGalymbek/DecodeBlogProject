@@ -17,4 +17,12 @@ const isAuthAdminOrAuthor = async (req, res, next)=>{
     }
 }
 
-module.exports = {isAuth , isAuthAdminOrAuthor}
+const isAuthAuthor = async (req, res, next)=>{
+    if(req.user.id == req.params.id){
+        next()
+    }else{
+        res.status(401).send('You can not edit and delete this Blog. Only author!')
+    }
+}
+
+module.exports = {isAuth , isAuthAdminOrAuthor, isAuthAuthor}

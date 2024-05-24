@@ -26,8 +26,8 @@ passport.use(new LocalStategy(
 ))
 
 passport.use(new GithubStrategy({
-    clientID: clientID,
-    clientSecret: clientSecret,
+    clientID: ClientID,
+    clientSecret: ClientSecret,
     callbackURL: "http://localhost:8001/api/auth/github",
     scope: ['user', 'email']
   },

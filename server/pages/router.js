@@ -73,7 +73,6 @@ router.get('/detail/:id' , async(req, res)=>{
     const rates = await Rate.find({blogId: req.params.id}).populate('authorId')
     const rateCount = await Rate.find({blogId: req.params.id}).countDocuments();
     const blog = await Blog.findById(req.params.id).populate('category').populate('author')
-    console.log("rates: " + rates);
     console.log("Blog: " + blog);
     res.render('detail',{user:req.user ? req.user : {}, blog: blog, rates: rates, rateCount: rateCount})
 })

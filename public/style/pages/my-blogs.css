@@ -94,6 +94,8 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    font-family: 'Roboto 500', sans-serif;
+    font-size: 16px;
 }
 
 .edit-or-delete{

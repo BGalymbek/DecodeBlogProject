@@ -13,10 +13,11 @@
                 <a href="/new-blog">Новый блог</a>
             </div>
             <%
+                let countBlog = 0
                 blogs.forEach(item=>{
-                    console.log(blogs)
                     let count = 0                
                     if(item.author.id == loginUser.id){
+                        countBlog++
                         rates.forEach(rate=>{    
                             if(rate.blogId.toString() == item._id.toString()){
                                 count++;  
@@ -35,8 +36,8 @@
                         <div class="main-review-more">
                             <button class="btn-more" onclick="openMoreDetails(this)">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
+                                Еще
                             </button>
-                            Еще
                             <div class="edit-or-delete">
                                 <a href="/edit/<%=item._id%>">Редактировать</a>
                                 <a onclick="deleteBlogs('<%=item._id%>', '<%=item.author._id%>')">Удалить</a>
@@ -77,7 +78,7 @@
             <h4><%=user.full_name%></h4>
             <p>
                 В основном пишу про веб - разработку, на React & Redux<br><br>
-                285 постов за все время
+                <%=countBlog%> постов за все время
             </p>
             <div class="btns-profile">
                 <a href="" class="edit-btn">Редактировать</a>
