@@ -9,15 +9,15 @@ require('./server/config/db')
 require('./server/config/passport')
 
 app.use(express.static(__dirname + '/public'))
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(session({
     name:'decodeblog.session',
-    secret: 'keyboard cat',
+    secret: process.env.SESSION_SECRET || 'keyboard cat',
     maxAge: 1000 * 60 * 60 * 7,
     resave: false,
     store: mongooseStore.create({
-        mongoUrl:'mongodb://localhost:27017'
+        mongoUrl:process.env.MONGODB_URI
     })
 }))
 
@@ -32,7 +32,7 @@ app.use(require('./server/Blog/router'))
 app.use(require('./server/Category/router'))
 app.use(require('./server/Rates/router'))
 
-const PORT = 8001
+const PORT = process.env.PORT || 8001
 
 app.listen(PORT, ()=>{
     console.log(`Server works on port ${PORT}`);
